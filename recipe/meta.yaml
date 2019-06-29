@@ -1,19 +1,18 @@
 {% set name = 'tvb-data' %}
 {% set version = '1.5.8' %}
+{% set sha256 = "d91c3f79445ce9701bc26dd5254d09026d519f039e8b7d9fae28c78006081164" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  md5: 4fab7172bb8c68d17730c369697a433a
-  sha256: d91c3f79445ce9701bc26dd5254d09026d519f039e8b7d9fae28c78006081164
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/t/tvb-data/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/t/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: python -m pip install . --no-deps -vv
   skip: True  # [py>27]
 
 requirements:
