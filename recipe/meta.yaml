@@ -1,25 +1,26 @@
 {% set name = 'tvb-data' %}
-{% set version = '1.5.5' %}
+{% set version = '1.5.8' %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  md5: 475e7064759b754882cd6424ec2eb3fa
-  sha256: 4af128e5066a4aa1953b8b7104f37d6803b56ff2dff9066f0fd21681c5273da9
+  md5: 4fab7172bb8c68d17730c369697a433a
+  sha256: d91c3f79445ce9701bc26dd5254d09026d519f039e8b7d9fae28c78006081164
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/t/tvb-data/{{ name }}-{{ version }}.tar.gz
 
 build:
-  number: 1000
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [py>27]
 
 requirements:
+  host:
+    - pip
   build:
     - python
-    - setuptools
   run:
     - python
 
