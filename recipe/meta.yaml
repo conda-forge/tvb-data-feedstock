@@ -17,10 +17,10 @@ build:
   skip: True  # [py>27]
 
 requirements:
-  host:
-    - pip
   build:
     - python
+  host:
+    - pip
   run:
     - python
 
