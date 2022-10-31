@@ -12,7 +12,7 @@ source:
   url: https://pypi.io/packages/source/t/tvb-data/{{ name }}-{{ version }}.tar.gz
 
 build:
-  number: 5
+  number: 6
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -28,7 +28,7 @@ test:
 
 about:
   home: http://www.thevirtualbrain.com/
-  license: GPL-3.0
+  license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
   summary: 'A package with data for TVB'
