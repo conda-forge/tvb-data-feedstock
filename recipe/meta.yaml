@@ -1,18 +1,18 @@
-{% set name = 'tvb-data' %}
-{% set version = '2.0' %}
+{% set name = "tvb-data" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  md5: 757760ffd852a832f43835a391377ba4
+  md5: de4f7b07e4406e86b31877d39f336518
   sha256: 3a111a297d848f3d802bf7229601eb276c6776b24d360b378ac1089332e69e64
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/t/tvb-data/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/t/tvb-data/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
 
 build:
-  number: 8
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
