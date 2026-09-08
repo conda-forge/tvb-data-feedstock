@@ -3,7 +3,7 @@
 
 package:
   name: {{ name }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   md5: 757760ffd852a832f43835a391377ba4
